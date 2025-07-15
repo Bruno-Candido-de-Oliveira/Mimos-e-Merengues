@@ -1,0 +1,467 @@
+$cor-primaria: #4f5159;
+$cor-secundaria: #d99f6c;
+$cor-terciaria: #f2d5bb;
+$cor-quaternaria: #a67360;
+$cor-quinaria: #f2f2f2;
+$cor-branco: #ffffff;
+$grid-columns: 12;
+$titulo-secao: "Yeseva One", serif;
+
+@mixin section-title($cor-titulo) {
+  padding-top: 70px;
+  margin-bottom: 60px;
+  font-family: "Yeseva One", serif;
+  font-size: 36px;
+  font-weight: 400;
+  font-style: normal;
+  color: $cor-titulo;
+}
+
+@mixin botao($cor-fundo, $cor-texto) {
+  margin: 0 auto;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  background-color: $cor-fundo;
+  padding: 20px 40px;
+  border-radius: 8px;
+  border-style: none;
+
+  a {
+    text-decoration: none;
+    color: $cor-texto;
+    font-size: 24px;
+  }
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Yeseva+One&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+}
+
+body {
+  padding-top: 8vh;
+}
+
+header {
+  background-color: $cor-primaria;
+  color: $cor-branco;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 50px;
+  height: 8vh;
+  top: 0;
+  position: fixed;
+  width: 100%;
+  z-index: 1002;
+}
+
+header div {
+  top: 20px;
+  left: 0;
+  display: block;
+
+  img {
+    height: 25vh;
+    position: relative;
+    margin-left: 20px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+    margin-top: 16vh;
+  }
+}
+
+header nav {
+  z-index: 1001;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+header nav a {
+  text-decoration: none;
+  color: $cor-branco;
+  margin-left: 25px;
+
+  &:hover {
+    color: $cor-secundaria;
+  }
+}
+
+.slide {
+  display: flex;
+  height: 75vh;
+  width: 100%;
+  align-items: center;
+  background-image: url(/Assets/slide.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+
+  .botao-cardapio {
+    @include botao($cor-secundaria, $cor-branco);
+    margin: 0 auto;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+
+    &:hover {
+      background-color: darken($cor-secundaria, 10%);
+    }
+  }
+}
+
+.especialidades {
+  background-color: $cor-quinaria;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 5%;
+
+  h2 {
+    @include section-title($cor-primaria);
+  }
+
+  .section-cards {
+    gap: 2rem;
+    --grid-cols: #{$grid-columns};
+    display: grid;
+    padding-bottom: 10vh;
+    grid-template-columns: repeat(var(--grid-cols), 1fr);
+    width: 100%;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: $cor-branco;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  height: auto;
+  padding: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &.col-start-3.col-end-5 {
+    grid-column: 3 / 5;
+  }
+  &.col-start-5.col-end-7 {
+    grid-column: 5 / 7;
+  }
+  &.col-start-7.col-end-9 {
+    grid-column: 7 / 9;
+  }
+  &.col-start-9.col-end-11 {
+    grid-column: 9 / 11;
+  }
+
+  h5 {
+    font-size: 16px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 14px;
+    padding-bottom: 10px;
+    flex-grow: 1;
+  }
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+  }
+}
+
+.card-img {
+  border-radius: 4px;
+  height: 220px;
+  width: 100%;
+}
+
+.card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.nossa-historia {
+  height: auto;
+  --grid-cols: #{$grid-columns};
+  display: grid;
+  padding-bottom: 10vh;
+  grid-template-columns: repeat(var(--grid-cols), 1fr);
+  background-color: $cor-terciaria;
+  align-items: center;
+  gap: 2rem;
+  padding-left: 5%;
+  padding-right: 5%;
+
+  .texto-nossa-historia {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-column: 8 / 12;
+  }
+
+  .botao-nossa-historia {
+    @include botao($cor-secundaria, $cor-branco);
+    margin-top: 2vh;
+
+    &:hover {
+      background-color: darken($cor-secundaria, 10%);
+    }
+  }
+
+  h2 {
+    @include section-title($cor-primaria);
+  }
+
+  p {
+    line-height: 25px;
+  }
+
+  .img-destaque {
+    height: 65vh;
+    margin-top: 75px;
+    width: 100%;
+    grid-column: 2 / 7;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.rodape-site {
+  background-color: $cor-primaria;
+  grid-auto-flow: column;
+  color: $cor-branco;
+  --grid-cols: #{$grid-columns};
+  font-size: 16px;
+  display: grid;
+  padding-bottom: 10vh;
+  grid-template-columns: repeat(var(--grid-cols), 1fr);
+
+  .logo img {
+    height: 30vh;
+    margin-top: 50px;
+  }
+
+  .navegacao {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .navegacao a {
+    text-decoration: none;
+    color: $cor-branco;
+    margin-bottom: 10px;
+    font-size: 16px;
+    &:hover {
+      color: $cor-secundaria;
+    }
+  }
+
+  .redes-sociais img {
+    height: 4vh;
+    margin-left: 2vw;
+    margin-top: 22px;
+  }
+
+  .redes-sociais a {
+    text-decoration: none;
+  }
+
+  h3 {
+    margin-top: 50px;
+    margin-bottom: 25px;
+    font-family: "Yeseva One", serif;
+    font-size: 18px;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  p {
+    margin-bottom: 10px;
+  }
+}
+
+@for $i from 1 through $grid-columns {
+  .col-#{$i} {
+    grid-column-end: span #{$i};
+  }
+
+  .col-start-#{$i} {
+    grid-column-start: #{$i};
+  }
+
+  .col-end-#{$i + 1} {
+    grid-column-end: #{$i + 1};
+  }
+}
+
+.grid-auto-xs,
+.grid-auto-sm,
+.grid-auto-md,
+.grid-auto-lg,
+.grid-auto-xl {
+  display: grid;
+  grid-gap: var(--grid-gap, 0);
+  grid-template-columns: repeat(auto-fit, minmax(var(--col-min-width), 1fr));
+}
+
+.grid-gap-xs {
+  --grid-gap: var(--space-xs, 0.5rem);
+}
+
+.grid-gap-sm {
+  --grid-gap: var(--space-sm, 0.75rem);
+}
+
+.grid-gap-md {
+  --grid-gap: var(--space-md, 1.25rem);
+}
+
+.grid-gap-lg {
+  --grid-gap: var(--space-lg, 2rem);
+}
+
+.grid-gap-xl {
+  --grid-gap: var(--space-xl, 3.25rem);
+}
+
+// ######################################################################################## MEDIA QUERIES ##############################################################
+
+@media (max-width: 992px) {
+  body {
+    padding-top: 0;
+  }
+
+  header {
+    position: relative;
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+
+    div img {
+      position: static;
+      height: 18vh;
+      margin: 0;
+      margin-bottom: 20px;
+    }
+
+    nav {
+      justify-content: center;
+    }
+
+    nav a {
+      margin: 0 15px;
+    }
+  }
+
+  .slide {
+    height: 50vh;
+  }
+
+  .especialidades .section-cards {
+    grid-template-columns: repeat(2, 1fr);
+
+    .card {
+      grid-column: auto;
+    }
+  }
+
+  .nossa-historia {
+    grid-template-columns: 1fr;
+    padding-left: 5%;
+    padding-right: 5%;
+    height: auto;
+
+    .img-destaque,
+    .texto-nossa-historia {
+      grid-column: 1 / -1;
+      text-align: center;
+      margin-top: 0;
+    }
+
+    .img-destaque {
+      margin-top: 30px;
+      margin-bottom: 30px;
+      height: 50vh;
+    }
+
+    h2 {
+      padding-top: 20px;
+      margin-bottom: 30px;
+    }
+  }
+
+  .rodape-site {
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+
+    .logo,
+    .contato,
+    .horario,
+    .navegacao,
+    .redes-sociais {
+      grid-column: auto;
+      margin: 0 auto;
+      padding: 20px 0;
+      width: 100%;
+      text-align: center;
+      align-self: start;
+    }
+
+    .logo {
+      grid-column: 1 / -1;
+    }
+
+    .redes-sociais {
+      grid-column: 1 / -1;
+
+      img {
+        margin: 0 15px;
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  header nav {
+    flex-direction: column;
+    align-items: center;
+
+    a {
+      margin: 10px 0;
+    }
+  }
+
+  .slide .botao-cardapio a {
+    font-size: 18px;
+  }
+
+  .especialidades .section-cards,
+  .nossa-historia,
+  .rodape-site {
+    grid-template-columns: 1fr;
+
+    .card,
+    .img-destaque,
+    .texto-nossa-historia,
+    .logo,
+    .contato,
+    .horario,
+    .navegacao,
+    .redes-sociais {
+      grid-column: 1 / -1;
+    }
+  }
+}
