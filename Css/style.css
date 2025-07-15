@@ -57,7 +57,7 @@ header nav a:hover {
   height: 75vh;
   width: 100%;
   align-items: center;
-  background-image: url(../Assets/slide.jpg);
+  background-image: url(.Css/Assets/slide.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
