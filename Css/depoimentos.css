@@ -60,7 +60,7 @@ header nav a:hover {
   width: 100%;
   align-items: center;
   text-align: center;
-  background-image: url("../Assets/slide-1.jpg");
+  background-image: url(/Assets/slide.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -123,7 +123,6 @@ header nav a:hover {
 
 .rodape-site {
   background-color: #4f5159;
-  grid-auto-flow: column;
   color: #ffffff;
   --grid-cols: 12;
   font-size: 16px;
@@ -312,36 +311,6 @@ header nav a:hover {
   grid-column-end: 13;
 }
 
-.grid-auto-xs,
-.grid-auto-sm,
-.grid-auto-md,
-.grid-auto-lg,
-.grid-auto-xl {
-  display: grid;
-  grid-gap: var(--grid-gap, 0);
-  grid-template-columns: repeat(auto-fit, minmax(var(--col-min-width), 1fr));
-}
-
-.grid-gap-xs {
-  --grid-gap: var(--space-xs, 0.5rem);
-}
-
-.grid-gap-sm {
-  --grid-gap: var(--space-sm, 0.75rem);
-}
-
-.grid-gap-md {
-  --grid-gap: var(--space-md, 1.25rem);
-}
-
-.grid-gap-lg {
-  --grid-gap: var(--space-lg, 2rem);
-}
-
-.grid-gap-xl {
-  --grid-gap: var(--space-xl, 3.25rem);
-}
-
 @media (max-width: 992px) {
   body {
     padding-top: 0;
@@ -363,9 +332,6 @@ header nav a:hover {
   }
   header nav a {
     margin: 0 15px;
-  }
-  .slide {
-    height: 50vh;
   }
   .rodape-site {
     grid-template-columns: 1fr 1fr;
@@ -404,9 +370,6 @@ header nav a:hover {
   .rodape-site {
     grid-template-columns: 1fr;
   }
-  .rodape-site .card,
-  .rodape-site .img-destaque,
-  .rodape-site .texto-nossa-historia,
   .rodape-site .logo,
   .rodape-site .contato,
   .rodape-site .horario,

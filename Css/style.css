@@ -57,7 +57,7 @@ header nav a:hover {
   height: 75vh;
   width: 100%;
   align-items: center;
-  background-image: url("../Assets/slide-1.jpg");
+  background-image: url("/Assets/slide-1.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -410,36 +410,6 @@ header nav a:hover {
 
 .col-end-13 {
   grid-column-end: 13;
-}
-
-.grid-auto-xs,
-.grid-auto-sm,
-.grid-auto-md,
-.grid-auto-lg,
-.grid-auto-xl {
-  display: grid;
-  grid-gap: var(--grid-gap, 0);
-  grid-template-columns: repeat(auto-fit, minmax(var(--col-min-width), 1fr));
-}
-
-.grid-gap-xs {
-  --grid-gap: var(--space-xs, 0.5rem);
-}
-
-.grid-gap-sm {
-  --grid-gap: var(--space-sm, 0.75rem);
-}
-
-.grid-gap-md {
-  --grid-gap: var(--space-md, 1.25rem);
-}
-
-.grid-gap-lg {
-  --grid-gap: var(--space-lg, 2rem);
-}
-
-.grid-gap-xl {
-  --grid-gap: var(--space-xl, 3.25rem);
 }
 
 @media (max-width: 992px) {

@@ -7,16 +7,6 @@ $cor-branco: #ffffff;
 $grid-columns: 12;
 $titulo-secao: "Yeseva One", serif;
 
-@mixin section-title($cor-titulo) {
-  padding-top: 70px;
-  margin-bottom: 60px;
-  font-family: "Yeseva One", serif;
-  font-size: 36px;
-  font-weight: 400;
-  font-style: normal;
-  color: $cor-titulo;
-}
-
 @mixin botao($cor-fundo, $cor-texto) {
   margin: 0 auto;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
@@ -164,7 +154,6 @@ header nav a {
 
 .rodape-site {
   background-color: $cor-primaria;
-  grid-auto-flow: column;
   color: $cor-branco;
   --grid-cols: #{$grid-columns};
   font-size: 16px;
@@ -232,36 +221,6 @@ header nav a {
   }
 }
 
-.grid-auto-xs,
-.grid-auto-sm,
-.grid-auto-md,
-.grid-auto-lg,
-.grid-auto-xl {
-  display: grid;
-  grid-gap: var(--grid-gap, 0);
-  grid-template-columns: repeat(auto-fit, minmax(var(--col-min-width), 1fr));
-}
-
-.grid-gap-xs {
-  --grid-gap: var(--space-xs, 0.5rem);
-}
-
-.grid-gap-sm {
-  --grid-gap: var(--space-sm, 0.75rem);
-}
-
-.grid-gap-md {
-  --grid-gap: var(--space-md, 1.25rem);
-}
-
-.grid-gap-lg {
-  --grid-gap: var(--space-lg, 2rem);
-}
-
-.grid-gap-xl {
-  --grid-gap: var(--space-xl, 3.25rem);
-}
-
 @media (max-width: 992px) {
   body {
     padding-top: 0;
@@ -286,43 +245,6 @@ header nav a {
 
     nav a {
       margin: 0 15px;
-    }
-  }
-
-  .slide {
-    height: 50vh;
-  }
-
-  .especialidades .section-cards {
-    grid-template-columns: repeat(2, 1fr);
-
-    .card {
-      grid-column: auto;
-    }
-  }
-
-  .nossa-historia {
-    grid-template-columns: 1fr;
-    padding-left: 5%;
-    padding-right: 5%;
-    height: auto;
-
-    .img-destaque,
-    .texto-nossa-historia {
-      grid-column: 1 / -1;
-      text-align: center;
-      margin-top: 0;
-    }
-
-    .img-destaque {
-      margin-top: 30px;
-      margin-bottom: 30px;
-      height: 50vh;
-    }
-
-    h2 {
-      padding-top: 20px;
-      margin-bottom: 30px;
     }
   }
 
@@ -357,7 +279,6 @@ header nav a {
   }
 }
 
-/* Telas pequenas (Celulares) */
 @media (max-width: 576px) {
   header nav {
     flex-direction: column;
@@ -368,18 +289,9 @@ header nav a {
     }
   }
 
-  .slide .botao-cardapio a {
-    font-size: 18px;
-  }
-
-  .especialidades .section-cards,
-  .nossa-historia,
   .rodape-site {
     grid-template-columns: 1fr;
 
-    .card,
-    .img-destaque,
-    .texto-nossa-historia,
     .logo,
     .contato,
     .horario,

@@ -17,19 +17,6 @@ $titulo-secao: "Yeseva One", serif;
   color: $cor-titulo;
 }
 
-@mixin botao($cor-fundo, $cor-texto) {
-  margin: 0 auto;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
-  background-color: $cor-fundo;
-  padding: 20px 40px;
-  border-radius: 8px;
-  border-style: none;
-  cursor: pointer;
-  text-decoration: none;
-  color: $cor-texto;
-  font-size: 24px;
-}
-
 @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Yeseva+One&display=swap");
 
 * {
@@ -115,17 +102,16 @@ header nav a {
   display: flex;
   align-items: center;
   width: 100%;
-  min-height: 92vh; // Usa a altura da viewport menos o header
+  min-height: 92vh;
   background-color: $cor-quinaria;
 
-  // Alterna a cor de fundo entre as seções
   &:nth-child(even) {
     background-color: $cor-branco;
   }
 
   .texto,
   .imagem {
-    flex: 1; // Divide o espaço igualmente
+    flex: 1;
     padding: 5%;
   }
 
@@ -147,7 +133,6 @@ header nav a {
     color: #555;
   }
 
-  // Modificador para inverter a ordem
   &--inversa {
     flex-direction: row-reverse;
   }
@@ -155,7 +140,6 @@ header nav a {
 
 .rodape-site {
   background-color: $cor-primaria;
-  grid-auto-flow: column;
   color: $cor-branco;
   --grid-cols: #{$grid-columns};
   font-size: 16px;
@@ -222,36 +206,6 @@ header nav a {
   }
 }
 
-.grid-auto-xs,
-.grid-auto-sm,
-.grid-auto-md,
-.grid-auto-lg,
-.grid-auto-xl {
-  display: grid;
-  grid-gap: var(--grid-gap, 0);
-  grid-template-columns: repeat(auto-fit, minmax(var(--col-min-width), 1fr));
-}
-
-.grid-gap-xs {
-  --grid-gap: var(--space-xs, 0.5rem);
-}
-
-.grid-gap-sm {
-  --grid-gap: var(--space-sm, 0.75rem);
-}
-
-.grid-gap-md {
-  --grid-gap: var(--space-md, 1.25rem);
-}
-
-.grid-gap-lg {
-  --grid-gap: var(--space-lg, 2rem);
-}
-
-.grid-gap-xl {
-  --grid-gap: var(--space-xl, 3.25rem);
-}
-
 @media (max-width: 992px) {
   body {
     padding-top: 0;
@@ -276,43 +230,6 @@ header nav a {
 
     nav a {
       margin: 0 15px;
-    }
-  }
-
-  .slide {
-    height: 50vh;
-  }
-
-  .especialidades .section-cards {
-    grid-template-columns: repeat(2, 1fr);
-
-    .card {
-      grid-column: auto;
-    }
-  }
-
-  .nossa-historia {
-    grid-template-columns: 1fr;
-    padding-left: 5%;
-    padding-right: 5%;
-    height: auto;
-
-    .img-destaque,
-    .texto-nossa-historia {
-      grid-column: 1 / -1;
-      text-align: center;
-      margin-top: 0;
-    }
-
-    .img-destaque {
-      margin-top: 30px;
-      margin-bottom: 30px;
-      height: 50vh;
-    }
-
-    h2 {
-      padding-top: 20px;
-      margin-bottom: 30px;
     }
   }
 
@@ -357,18 +274,9 @@ header nav a {
     }
   }
 
-  .slide .botao-cardapio a {
-    font-size: 18px;
-  }
-
-  .especialidades .section-cards,
-  .nossa-historia,
   .rodape-site {
     grid-template-columns: 1fr;
 
-    .card,
-    .img-destaque,
-    .texto-nossa-historia,
     .logo,
     .contato,
     .horario,
